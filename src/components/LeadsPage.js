@@ -11,48 +11,48 @@ export default function LeadsPage() {
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 shrink-0">
         <div className="flex items-center gap-2">
           <h1 className="text-2xl font-bold text-slate-800 tracking-tight">Leads</h1>
-          <span className="text-slate-400 text-xs cursor-pointer hover:text-slate-600">▼</span>
+          <span className="text-slate-400 text-sm cursor-pointer hover:text-slate-600">▼</span>
         </div>
         
-        <div className="flex items-center flex-wrap gap-3 text-xs text-slate-600 font-medium">
-          <button className="hover:bg-slate-100 px-2 py-1.5 rounded flex items-center gap-1.5 transition-colors">✨ AI Agents <span>▼</span></button>
-          <button className="hover:bg-slate-100 px-2 py-1.5 rounded flex items-center gap-1 transition-colors">📥 Import</button>
-          <button className="hover:bg-slate-100 px-2 py-1.5 rounded flex items-center gap-1 transition-colors">🔄 Integrate</button>
-          <button className="hover:bg-slate-100 px-2 py-1.5 rounded flex items-center gap-1 transition-colors">🤖 Automate / 6</button>
-          <button className="hover:bg-slate-100 px-2 py-1.5 rounded flex items-center gap-1 transition-colors">👥 Agents</button>
+        <div className="flex items-center flex-wrap gap-3 text-sm text-slate-600 font-medium">
+          <button className="hover:bg-slate-100 px-3 py-2 rounded flex items-center gap-2 transition-colors">✨ AI Agents <span>▼</span></button>
+          <button className="hover:bg-slate-100 px-3 py-2 rounded flex items-center gap-1 transition-colors">📥 Import</button>
+          <button className="hover:bg-slate-100 px-3 py-2 rounded flex items-center gap-1 transition-colors">🔄 Integrate</button>
+          <button className="hover:bg-slate-100 px-3 py-2 rounded flex items-center gap-1 transition-colors">🤖 Automate / 6</button>
+          <button className="hover:bg-slate-100 px-3 py-2 rounded flex items-center gap-1 transition-colors">👥 Agents</button>
           <span className="text-slate-300">|</span>
-          <div className="w-6 h-6 bg-slate-800 text-white font-bold rounded-full flex items-center justify-center text-[10px]">P</div>
-          <button className="border border-slate-200 bg-white hover:bg-slate-50 px-3 py-1.5 rounded font-semibold shadow-sm transition-colors">Invite / 1</button>
-          <button className="border border-slate-200 bg-white hover:bg-slate-50 p-1.5 rounded shadow-sm transition-colors">🔗</button>
-          <button className="text-slate-400 hover:text-slate-600 px-1">•••</button>
+          <div className="w-7 h-7 bg-slate-800 text-white font-bold rounded-full flex items-center justify-center text-xs">P</div>
+          <button className="border border-slate-200 bg-white hover:bg-slate-50 px-3 py-2 rounded font-semibold shadow-sm transition-colors">Invite / 1</button>
+          <button className="border border-slate-200 bg-white hover:bg-slate-50 px-2 py-2 rounded shadow-sm transition-colors">🔗</button>
+          <button className="text-slate-400 hover:text-slate-600 px-2">•••</button>
         </div>
       </header>
 
       {/* ─── TABS NAVIGATION (แถบสลับตาราง/ฟอร์ม) ─── */}
-      <div className="border-b border-slate-200 mb-4 flex items-center gap-6 text-xs shrink-0 font-medium">
+      <div className="border-b border-slate-200 mb-4 flex items-center gap-6 text-sm shrink-0 font-medium">
         <div className="border-b-2 border-indigo-600 pb-2 font-bold text-slate-900 cursor-pointer">Main table</div>
         <div className="text-slate-400 hover:text-slate-700 pb-2 cursor-pointer transition-colors">Lead submission form</div>
         <button className="text-slate-400 hover:text-indigo-600 pb-2 text-base">+</button>
       </div>
 
       {/* ─── TOOLBAR & FILTER BAR ─── */}
-      <div className="py-2 flex items-center justify-between gap-4 border-b border-slate-100 shrink-0 text-xs">
-        <div className="flex items-center flex-wrap gap-1.5">
+      <div className="py-3 flex items-center justify-between gap-4 border-b border-slate-100 shrink-0 text-sm">
+        <div className="flex items-center flex-wrap gap-2">
           <div className="inline-flex rounded-md shadow-sm">
-            <button className="bg-[#0073ea] hover:bg-[#0060b9] text-white px-3 py-1.5 rounded-l-md font-medium text-[11px] transition-colors">
+            <button className="bg-[#0073ea] hover:bg-[#0060b9] text-white px-4 py-2 rounded-l-md font-medium text-sm transition-colors">
               New lead
             </button>
-            <button className="bg-[#0060b9] text-white px-1.5 py-1.5 rounded-r-md border-l border-sky-700 text-[10px] hover:bg-[#0050a0]">
+            <button className="bg-[#0060b9] text-white px-3 py-2 rounded-r-md border-l border-sky-700 text-sm hover:bg-[#0050a0]">
               ▼
             </button>
           </div>
-          <button className="flex items-center gap-1 px-2.5 py-1.5 hover:bg-slate-100 rounded text-slate-500 transition-colors">🔍 Search</button>
-          <button className="flex items-center gap-1 px-2.5 py-1.5 hover:bg-slate-100 rounded text-slate-500 transition-colors">👤 Person</button>
-          <button className="flex items-center gap-1 px-2.5 py-1.5 hover:bg-slate-100 rounded text-slate-500 transition-colors">Filter ▼</button>
-          <button className="flex items-center gap-1 px-2.5 py-1.5 hover:bg-slate-100 rounded text-slate-500 transition-colors">Group by</button>
-          <button className="text-slate-300 px-1 hover:text-slate-500">•••</button>
+          <button className="flex items-center gap-2 px-3 py-2 hover:bg-slate-100 rounded text-slate-500 transition-colors text-sm">🔍 Search</button>
+          <button className="flex items-center gap-2 px-3 py-2 hover:bg-slate-100 rounded text-slate-500 transition-colors text-sm">👤 Person</button>
+          <button className="flex items-center gap-2 px-3 py-2 hover:bg-slate-100 rounded text-slate-500 transition-colors text-sm">Filter ▼</button>
+          <button className="flex items-center gap-2 px-3 py-2 hover:bg-slate-100 rounded text-slate-500 transition-colors text-sm">Group by</button>
+          <button className="text-slate-300 px-2 hover:text-slate-500">•••</button>
         </div>
-        <button className="text-slate-400 border border-slate-200 p-1 rounded bg-slate-50 text-[10px] hover:bg-slate-100 transition-colors">▲</button>
+        <button className="text-slate-400 border border-slate-200 px-2 py-1 rounded bg-slate-50 text-sm hover:bg-slate-100 transition-colors">▲</button>
       </div>
 
       {/* ─── LEADS TABLES AREA ─── */}
@@ -61,12 +61,12 @@ export default function LeadsPage() {
           <div key={group.id} className="relative">
             
             <div className="flex items-center gap-1.5 mb-2 cursor-pointer group w-fit select-none">
-              <span className={`text-[10px] transition-transform ${group.textColor}`}>▼</span>
-              <h2 className={`font-bold text-sm tracking-tight ${group.textColor}`}>{group.title}</h2>
+              <span className={`text-sm transition-transform ${group.textColor}`}>▼</span>
+              <h2 className={`font-bold text-base tracking-tight ${group.textColor}`}>{group.title}</h2>
             </div>
 
             <div className="overflow-x-auto border border-slate-200 rounded-md shadow-sm bg-white">
-              <table className="w-full text-left text-[11px] border-collapse min-w-[1250px]">
+              <table className="w-full text-left text-sm border-collapse min-w-[1250px]">
                 
                 <thead>
                   <tr className="bg-[#f5f7fa] text-slate-500 border-b border-slate-200 h-9 select-none">
@@ -109,7 +109,7 @@ export default function LeadsPage() {
                           <div className="w-2 h-full bg-slate-100 rounded-sm"></div>
                           <div className="w-2 h-full bg-orange-200 rounded-sm"></div>
                           <div className="w-2 h-full bg-indigo-200 rounded-sm"></div>
-                          <span className="ml-2 text-[9px] text-slate-300 cursor-pointer hover:text-slate-500">+</span>
+                          <span className="ml-2 text-sm text-slate-300 cursor-pointer hover:text-slate-500">+</span>
                         </div>
                       </td>
 
@@ -127,7 +127,7 @@ export default function LeadsPage() {
                       
                       {/* แหล่งที่มา (Source Badge) */}
                       <td className={`p-0 border-r border-slate-200 text-center font-semibold ${lead.sourceColor}`}>
-                        <div className="w-full h-full flex items-center justify-center min-h-[35px] text-[10px]">{lead.source}</div>
+                        <div className="w-full h-full flex items-center justify-center min-h-[35px] text-sm">{lead.source}</div>
                       </td>
 
                       <td className="px-3 border-r border-slate-200 text-slate-500 font-medium">{lead.lastInteraction}</td>
@@ -146,7 +146,7 @@ export default function LeadsPage() {
           </div>
         ))}
 
-        <button className="border border-slate-300 bg-white hover:bg-slate-50 text-slate-600 font-bold px-3 py-1.5 rounded-md text-xs shadow-sm transition-colors">
+        <button className="border border-slate-300 bg-white hover:bg-slate-50 text-slate-600 font-bold px-4 py-2 rounded-md text-sm shadow-sm transition-colors">
           + Add new group
         </button>
       </div>

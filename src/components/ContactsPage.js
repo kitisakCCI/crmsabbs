@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import { initialGroups } from './contactsData'; // ดึงข้อมูลจำลองมาใช้
+import CreateContactForm from './CreateContactForm';
 
 export default function ContactsPage() {
   const [groups, setGroups] = useState(initialGroups);
+  const [isCreating, setIsCreating] = useState(false);
+
+  const handleSaveNewContact = (newContactData) => {
+    // TODO: บันทึก contact ใหม่ลงตาราง
+    console.log('New contact:', newContactData);
+    setIsCreating(false);
+  };
 
   return (
     <div className="w-full min-h-screen bg-white text-slate-800 font-sans p-6 selection:bg-indigo-100">
@@ -39,7 +47,10 @@ export default function ContactsPage() {
         <div className="flex items-center flex-wrap gap-2">
           {/* ปุ่ม New Contact สไตล์สีกรมท่าฝั่งซ้าย */}
           <div className="inline-flex rounded-md shadow-sm">
-            <button className="bg-sky-700 hover:bg-sky-800 text-white px-4 py-2 rounded-l-md font-medium text-xs">
+            <button 
+              onClick={() => setIsCreating(true)}
+              className="bg-sky-700 hover:bg-sky-800 text-white px-4 py-2 rounded-l-md font-medium text-xs transition-colors"
+            >
               New contact
             </button>
             <button className="bg-sky-800 hover:bg-sky-900 text-white px-2 py-2 rounded-r-md border-l border-sky-900 text-xs">
@@ -66,7 +77,10 @@ export default function ContactsPage() {
         <button className="text-slate-400 hover:text-slate-600 text-xs bg-slate-50 p-1.5 rounded border border-slate-200">▲</button>
       </div>
 
-      {/* 3. GROUPS OF TABLES (ส่วนตารางแยกกลุ่มตามภาพ) */}
+      {/* 3. GROUPS OF TABLES (ส่วนตารางแยกกลุ่มตามภาพ) หรือ FORM สำหรับเพิ่มข้อมูล */}
+      {isCreating ? (
+        <CreateContactForm onSave={handleSaveNewContact} onCancel={() => setIsCreating(false)} />
+      ) : (
       <div className="space-y-10">
         {groups.map((group) => (
           <div key={group.id} className="relative">
@@ -174,6 +188,7 @@ export default function ContactsPage() {
           + Add new group
         </button>
       </div>
+      )}
 
     </div>
   );

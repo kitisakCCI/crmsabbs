@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
 import { initialDealGroups } from './dealsData';
+import DealDetailPage from './DealDetailPage';
 
 export default function DealsPage() {
   const [groups, setGroups] = useState(initialDealGroups);
+  const [showDealDetails, setShowDealDetails] = useState(false);
+
+  const handleOpenDealDetails = () => {
+    setShowDealDetails(true);
+  };
+
+  if (showDealDetails) {
+    return <DealDetailPage onBack={() => setShowDealDetails(false)} />;
+  }
 
   return (
     <div className="w-full min-h-screen bg-white text-slate-800 font-sans p-6">
@@ -40,28 +50,28 @@ export default function DealsPage() {
       <div className="flex items-center justify-between gap-4 mb-6 text-sm">
         <div className="flex items-center flex-wrap gap-2">
           <div className="inline-flex rounded-md shadow-sm">
-            <button className="bg-sky-700 hover:bg-sky-800 text-white px-4 py-2 rounded-l-md font-medium text-xs">
+            <button onClick={handleOpenDealDetails} className="bg-sky-700 hover:bg-sky-800 text-white px-5 py-2.5 rounded-l-md font-medium text-sm">
               New deal
             </button>
-            <button className="bg-sky-800 hover:bg-sky-900 text-white px-2 py-2 rounded-r-md border-l border-sky-900 text-xs">
+            <button className="bg-sky-800 hover:bg-sky-900 text-white px-3 py-2.5 rounded-r-md border-l border-sky-900 text-sm">
               ▼
             </button>
           </div>
-          <div className="flex items-center gap-1 px-3 py-1.5 hover:bg-slate-50 rounded-md cursor-pointer text-slate-600">
+          <div className="flex items-center gap-1 px-3 py-2 hover:bg-slate-50 rounded-md cursor-pointer text-slate-600 text-sm">
             <span>🔍</span> <span>Search</span>
           </div>
-          <div className="flex items-center gap-1 px-3 py-1.5 hover:bg-slate-50 rounded-md cursor-pointer text-slate-600">
+          <div className="flex items-center gap-1 px-3 py-2 hover:bg-slate-50 rounded-md cursor-pointer text-slate-600 text-sm">
             <span>👤</span> <span>Person</span>
           </div>
-          <div className="flex items-center gap-1 px-3 py-1.5 hover:bg-slate-50 rounded-md cursor-pointer text-slate-600">
-            <span>Filter</span> <span className="text-[10px]">▼</span>
+          <div className="flex items-center gap-1 px-3 py-2 hover:bg-slate-50 rounded-md cursor-pointer text-slate-600 text-sm">
+            <span>Filter</span> <span className="text-xs">▼</span>
           </div>
           <div className="flex items-center gap-1 px-3 py-1.5 hover:bg-slate-50 rounded-md cursor-pointer text-slate-600">
             <span>Group by</span>
           </div>
           <button className="text-slate-400 hover:text-slate-600 px-2">•••</button>
         </div>
-        <button className="text-slate-400 hover:text-slate-600 text-xs bg-slate-50 p-1.5 rounded border border-slate-200">▲</button>
+        <button className="text-slate-400 hover:text-slate-600 text-sm bg-slate-50 p-1.5 rounded border border-slate-200">▲</button>
       </div>
 
       {/* 3. TABLES SECTION */}
@@ -70,13 +80,13 @@ export default function DealsPage() {
           <div key={group.id}>
             {/* หัวข้อกลุ่ม */}
             <div className="flex items-center gap-2 mb-2 cursor-pointer w-fit">
-              <span className={`text-xs ${group.textColor}`}>▼</span>
+              <span className={`text-sm ${group.textColor}`}>▼</span>
               <h2 className={`font-semibold text-base ${group.textColor}`}>{group.title}</h2>
             </div>
 
             {/* โครงสร้างตารางหลัก */}
             <div className="overflow-x-auto border border-slate-200 rounded-md shadow-sm">
-              <table className="w-full text-left text-xs border-collapse min-w-[1300px]">
+              <table className="w-full text-left text-sm border-collapse min-w-[1300px]">
                 <thead>
                   <tr className="bg-slate-50 text-slate-500 border-b border-slate-200 h-10">
                     <th className="w-12 text-center border-r border-slate-200"><input type="checkbox" className="rounded" /></th>
@@ -105,10 +115,10 @@ export default function DealsPage() {
                       {/* คอลัมน์ชื่อดีล + ปุ่มขยายเลเยอร์ย่อยถ้ามี (Subitems) */}
                       <td className="px-4 font-medium text-slate-900 border-r border-slate-200 flex items-center gap-2 h-10 justify-between">
                         <div className="flex items-center gap-1.5">
-                          {deal.subItemsCount && <span className="text-[10px] text-slate-400 cursor-pointer hover:text-slate-600">▶</span>}
+                          {deal.subItemsCount && <span className="text-sm text-slate-400 cursor-pointer hover:text-slate-600">▶</span>}
                           <span>{deal.name}</span>
                           {deal.subItemsCount && (
-                            <span className="bg-slate-100 text-slate-500 text-[10px] px-1.5 py-0.2 rounded border border-slate-200 font-normal">
+                            <span className="bg-slate-100 text-slate-500 text-sm px-2 py-0.5 rounded border border-slate-200 font-normal">
                               {deal.subItemsCount}
                             </span>
                           )}
@@ -122,7 +132,7 @@ export default function DealsPage() {
                           <div className="w-2 h-full bg-indigo-300 rounded-sm"></div>
                           <div className="w-2 h-full bg-pink-400 rounded-sm"></div>
                           <div className="w-2 h-full bg-sky-400 rounded-sm"></div>
-                          <span className="ml-2 text-[10px] text-slate-400 cursor-pointer">+</span>
+                          <span className="ml-2 text-sm text-slate-400 cursor-pointer">+</span>
                         </div>
                       </td>
 
@@ -192,9 +202,8 @@ export default function DealsPage() {
                     {/* คอลัมน์แสดงยอดรวม (Sum Value) */}
                     <td className="px-4 border-r border-slate-200 font-mono text-center align-middle">
                       <div className="text-slate-900 font-bold">{group.summary.totalValue}</div>
-                      <div className="text-[10px] text-slate-400 font-sans tracking-tight">sum</div>
+                      <div className="text-xs text-slate-400 font-sans tracking-tight">sum</div>
                     </td>
-                    
                     <td className="border-r border-slate-200 text-center text-slate-400">-</td>
                     <td className="border-r border-slate-200 text-center text-slate-400">-</td>
                     <td className="border-r border-slate-200"></td>
@@ -209,7 +218,7 @@ export default function DealsPage() {
         ))}
 
         {/* ปุ่มสร้างกลุ่มตารางดีลชุดใหม่ */}
-        <button className="border border-slate-300 hover:bg-slate-50 text-slate-600 font-medium px-4 py-1.5 rounded-md text-xs">
+        <button className="border border-slate-300 hover:bg-slate-50 text-slate-600 font-medium px-4 py-2 rounded-md text-sm">
           + Add new group
         </button>
       </div>

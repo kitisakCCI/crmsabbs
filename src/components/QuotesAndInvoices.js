@@ -18,18 +18,18 @@ export default function QuotesAndInvoices() {
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 shrink-0">
         <div className="flex items-center gap-2">
           <h1 className="text-2xl font-bold text-slate-800 tracking-tight">Quotes & Invoices</h1>
-          <span className="text-slate-400 text-xs cursor-pointer hover:text-slate-600">▼</span>
+          <span className="text-slate-400 text-sm cursor-pointer hover:text-slate-600">▼</span>
         </div>
         
         {/* แถวเครื่องมือจัดการระบบขวาบน */}
-        <div className="flex items-center flex-wrap gap-3 text-xs text-slate-600 font-medium">
-          <button className="hover:bg-slate-100 px-2.5 py-1.5 rounded flex items-center gap-1 transition-colors">💬 Feedback</button>
-          <button className="hover:bg-slate-100 px-2.5 py-1.5 rounded flex items-center gap-1 transition-colors">💡 AI suggestions <span className="bg-sky-100 text-sky-600 font-bold text-[9px] px-1 rounded">New</span></button>
-          <button className="hover:bg-slate-100 px-2.5 py-1.5 rounded flex items-center gap-1 transition-colors">🔄 Integrate <span className="w-4 h-4 bg-emerald-600 text-white text-[9px] font-bold rounded-full flex items-center justify-center scale-90">M</span></button>
+        <div className="flex items-center flex-wrap gap-3 text-sm text-slate-600 font-medium">
+          <button className="hover:bg-slate-100 px-3 py-2 rounded flex items-center gap-2 transition-colors">💬 Feedback</button>
+          <button className="hover:bg-slate-100 px-3 py-2 rounded flex items-center gap-2 transition-colors">💡 AI suggestions <span className="bg-sky-100 text-sky-600 font-bold text-xs px-1 rounded">New</span></button>
+          <button className="hover:bg-slate-100 px-3 py-2 rounded flex items-center gap-2 transition-colors">🔄 Integrate <span className="w-4 h-4 bg-emerald-600 text-white text-xs font-bold rounded-full flex items-center justify-center scale-90">M</span></button>
           <button className="hover:bg-slate-100 px-2.5 py-1.5 rounded flex items-center gap-1 transition-colors">🤖 Automate</button>
           <button className="hover:bg-slate-100 px-2.5 py-1.5 rounded flex items-center gap-1 transition-colors">👥 Agents</button>
           <span className="text-slate-300">|</span>
-          <div className="w-6 h-6 bg-slate-800 text-white font-bold rounded-full flex items-center justify-center text-[10px]">P</div>
+          <div className="w-7 h-7 bg-slate-800 text-white font-bold rounded-full flex items-center justify-center text-xs">P</div>
           <button className="border border-slate-200 bg-white hover:bg-slate-50 px-3 py-1.5 rounded font-semibold shadow-sm transition-colors">Invite / 1</button>
           <button className="border border-slate-200 bg-white hover:bg-slate-50 p-1.5 rounded shadow-sm transition-colors">🔗</button>
           <button className="text-slate-400 hover:text-slate-600 px-1">•••</button>
@@ -37,7 +37,7 @@ export default function QuotesAndInvoices() {
       </header>
 
       {/* ─── TABS VIEW NAV ─── */}
-      <div className="border-b border-slate-200 mb-4 flex items-center gap-6 text-xs shrink-0 font-medium">
+      <div className="border-b border-slate-200 mb-4 flex items-center gap-6 text-sm shrink-0 font-medium">
         <div className="border-b-2 border-indigo-600 pb-2 font-bold text-slate-900 cursor-pointer">Main table</div>
         <button className="text-slate-400 hover:text-slate-600 pb-2">Quotes</button>
         <button className="text-slate-400 hover:text-slate-600 pb-2">Invoices</button>
@@ -45,13 +45,13 @@ export default function QuotesAndInvoices() {
       </div>
 
       {/* ─── TOOLBAR CONTROLS ─── */}
-      <div className="py-2.5 flex items-center justify-between gap-4 border-b border-slate-100 shrink-0 text-xs">
+      <div className="py-3 flex items-center justify-between gap-4 border-b border-slate-100 shrink-0 text-sm">
         <div className="flex items-center flex-wrap gap-1.5">
           <div className="inline-flex rounded-md shadow-sm">
-            <button className="bg-[#0073ea] hover:bg-[#0060b9] text-white px-3 py-1.5 rounded-l-md font-medium text-[11px] transition-colors">
+            <button className="bg-[#0073ea] hover:bg-[#0060b9] text-white px-4 py-2 rounded-l-md font-medium text-sm transition-colors">
               ➕ Create
             </button>
-            <button className="bg-[#0060b9] text-white px-1.5 py-1.5 rounded-r-md border-l border-sky-700 text-[10px] hover:bg-[#0050a0]">▼</button>
+            <button className="bg-[#0060b9] text-white px-3 py-2 rounded-r-md border-l border-sky-700 text-sm hover:bg-[#0050a0]">▼</button>
           </div>
           <button className="flex items-center gap-1 px-2.5 py-1.5 hover:bg-slate-100 rounded text-slate-500 transition-colors">🔍 Search</button>
           <button className="flex items-center gap-1 px-2.5 py-1.5 hover:bg-slate-100 rounded text-slate-500 transition-colors">👤 Person</button>
@@ -59,13 +59,13 @@ export default function QuotesAndInvoices() {
           <button className="flex items-center gap-1 px-2.5 py-1.5 hover:bg-slate-100 rounded text-slate-500 transition-colors">Group by</button>
           <button className="text-slate-300 px-1 hover:text-slate-500">•••</button>
         </div>
-        <button className="text-slate-400 border border-slate-200 p-1 rounded bg-slate-50 text-[10px] hover:bg-slate-100">▲</button>
+        <button className="text-slate-400 border border-slate-200 px-2 py-1 rounded bg-slate-50 text-sm hover:bg-slate-100">▲</button>
       </div>
 
       {/* ─── TABLE AREA ─── */}
       <div className="flex-1 overflow-y-auto py-4">
         <div className="overflow-x-auto border border-slate-200 rounded-md shadow-sm bg-white">
-          <table className="w-full text-left text-[11px] border-collapse min-w-[1100px]">
+          <table className="w-full text-left text-sm border-collapse min-w-[1100px]">
             
             {/* Header ของตารางหลัก */}
             <thead>
@@ -94,7 +94,7 @@ export default function QuotesAndInvoices() {
                     <td className="text-center border-r border-slate-200 border-l-4 border-indigo-500">
                       <button 
                         onClick={() => toggleExpand(doc.id)} 
-                        className="text-[10px] text-slate-400 p-1 hover:text-slate-800 font-mono transition-transform"
+                        className="text-sm text-slate-400 p-1 hover:text-slate-800 font-mono transition-transform"
                       >
                         {doc.isExpanded ? '▼' : '▶'}
                       </button>
@@ -103,14 +103,14 @@ export default function QuotesAndInvoices() {
                     {/* เลขที่เอกสาร */}
                     <td className="px-3 font-semibold text-slate-900 border-r border-slate-200 flex items-center justify-between h-10">
                       <span>{doc.documentNo}</span>
-                      <span className="text-slate-400 text-[10px] border border-slate-200 px-1.5 py-0.5 rounded bg-slate-50 opacity-0 group-hover/row:opacity-100 transition-opacity cursor-pointer flex items-center gap-1">
-                        <span>💬</span> Subitem <span className="bg-slate-200 text-slate-600 px-1 rounded-full text-[9px]">{doc.subitems.length}</span>
+                      <span className="text-slate-400 text-sm border border-slate-200 px-2 py-1 rounded bg-slate-50 opacity-0 group-hover/row:opacity-100 transition-opacity cursor-pointer flex items-center gap-1">
+                        <span>💬</span> Subitem <span className="bg-slate-200 text-slate-600 px-1 rounded-full text-xs">{doc.subitems.length}</span>
                       </span>
                     </td>
 
                     {/* ประเภทเอกสาร */}
                     <td className="p-1 border-r border-slate-200">
-                      <div className={`mx-auto rounded text-center py-1 font-normal w-24 text-[10px] ${doc.typeBg || 'bg-slate-100 text-slate-600'}`}>
+                      <div className={`mx-auto rounded text-center py-1 font-normal w-24 text-sm ${doc.typeBg || 'bg-slate-100 text-slate-600'}`}>
                         {doc.type}
                       </div>
                     </td>
@@ -126,7 +126,7 @@ export default function QuotesAndInvoices() {
 
                     {/* สถานะเอกสาร */}
                     <td className="p-1 border-r border-slate-200">
-                      <div className={`mx-auto rounded text-center py-1 font-semibold w-24 text-[10px] ${doc.statusBg || 'bg-slate-400 text-white'}`}>
+                      <div className={`mx-auto rounded text-center py-1 font-semibold w-24 text-sm ${doc.statusBg || 'bg-slate-400 text-white'}`}>
                         {doc.status}
                       </div>
                     </td>
@@ -148,7 +148,7 @@ export default function QuotesAndInvoices() {
                         
                         {/* โครงสร้างตารางย่อย (Subitems Table) */}
                         <div className="border border-slate-200 rounded shadow-sm overflow-hidden max-w-[1100px]">
-                          <table className="w-full text-left text-[10px] border-collapse">
+                          <table className="w-full text-left text-sm border-collapse">
                             <thead>
                               <tr className="bg-slate-50 text-slate-500 border-b border-slate-200 h-7 font-semibold">
                                 <th className="w-8 text-center border-r border-slate-200"><input type="checkbox" className="scale-75" /></th>
