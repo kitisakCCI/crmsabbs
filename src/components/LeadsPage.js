@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { initialLeadGroups } from './leadsData';
+import LeadsFormPage from './LeadsFormPage';
 
 export default function LeadsPage() {
   const [groups] = useState(initialLeadGroups);
+  const [showForm, setShowForm] = useState(false);
+
+  if (showForm) {
+    return <LeadsFormPage onCancel={() => setShowForm(false)} />;
+  }
 
   return (
     <div className="w-full min-h-screen bg-white text-slate-800 font-sans p-6 selection:bg-sky-100 flex flex-col overflow-hidden">
@@ -39,7 +45,10 @@ export default function LeadsPage() {
       <div className="py-3 flex items-center justify-between gap-4 border-b border-slate-100 shrink-0 text-sm">
         <div className="flex items-center flex-wrap gap-2">
           <div className="inline-flex rounded-md shadow-sm">
-            <button className="bg-[#0073ea] hover:bg-[#0060b9] text-white px-4 py-2 rounded-l-md font-medium text-sm transition-colors">
+            <button 
+              onClick={() => setShowForm(true)}
+              className="bg-[#0073ea] hover:bg-[#0060b9] text-white px-4 py-2 rounded-l-md font-medium text-sm transition-colors"
+            >
               New lead
             </button>
             <button className="bg-[#0060b9] text-white px-3 py-2 rounded-r-md border-l border-sky-700 text-sm hover:bg-[#0050a0]">
@@ -136,9 +145,12 @@ export default function LeadsPage() {
                     </tr>
                   ))}
 
-                  <tr className="text-slate-400 hover:bg-slate-50 h-9 transition-colors">
+                  <tr 
+                    onClick={() => setShowForm(true)}
+                    className="text-slate-400 hover:bg-slate-50 h-9 transition-colors cursor-pointer"
+                  >
                     <td className={`border-r border-slate-200 border-l-4 ${group.color}`}></td>
-                    <td colSpan="12" className="px-3 text-left cursor-pointer font-normal text-slate-400">+ Add lead</td>
+                    <td colSpan="12" className="px-3 text-left font-normal text-slate-400">+ Add lead</td>
                   </tr>
                 </tbody>
               </table>
