@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { amazonDealData } from './dealDetailData';
 
 export default function AmazonDealDetailPage({ onBack }) {
-  const [deal, setDeal] = useState(amazonDealData);
+  const [deal] = useState(amazonDealData);
   const [activeTab, setActiveTab] = useState('overview'); // tabs: overview, timeline, products
 
   // สเตทรองรับการจดโน้ตด่วนในดีล
@@ -55,7 +55,6 @@ export default function AmazonDealDetailPage({ onBack }) {
           <div className="grid grid-cols-5 gap-1 text-[10px] font-bold text-center">
             {['Discovery', 'Proposal', 'Negotiation', 'Won', 'Lost'].map((stage) => {
               const isCurrent = deal.stage === stage;
-              const isWon = deal.stage === 'Won' && stage === 'Won';
               
               let bgStyle = 'bg-slate-100 text-slate-400';
               if (isCurrent) {

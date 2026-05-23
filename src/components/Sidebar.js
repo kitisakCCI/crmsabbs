@@ -76,7 +76,7 @@ export default function Sidebar({ onLogout, user, activePage, onSelectPage }) {
                     return (
                       <a
                         key={item.id}
-                        href="#"
+                        href={`#${item.id}`}
                         onClick={(e) => {
                           e.preventDefault();
                           onSelectPage?.(item.id);

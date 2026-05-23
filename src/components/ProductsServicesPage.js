@@ -4,8 +4,8 @@ import { initialProducts, initialStats } from './productsData';
 export default function ProductsServicesPage() {
   // สเตทสำหรับสลับมุมมองระหว่าง 'table' และ 'dashboard'
   const [activeTab, setActiveTab] = useState('table');
-  const [products, setProducts] = useState(initialProducts);
-  const [stats, setStats] = useState(initialStats);
+  const [products] = useState(initialProducts);
+  const [stats] = useState(initialStats);
 
   return (
     <div className="w-full min-h-screen bg-white text-slate-800 font-sans p-6 selection:bg-sky-100 flex flex-col overflow-hidden">

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { initialActivityGroups } from './activitiesData';
 
 export default function ActivitiesPage() {
-  const [groups, setGroups] = useState(initialActivityGroups);
+  const [groups] = useState(initialActivityGroups);
 
   return (
     <div className="w-full min-h-screen bg-white text-slate-800 font-sans p-6 selection:bg-indigo-100 flex flex-col overflow-hidden">
@@ -107,7 +107,7 @@ export default function ActivitiesPage() {
                       </td>
 
                       {/* แถบประเภทกิจกรรม (Activity Type Badge แบบเต็มบล็อก) */}
-                      <td className="p-0 border-r border-slate-200 text-center font-semibold text-sm ${act.typeColor}">
+                      <td className={`p-0 border-r border-slate-200 text-center font-semibold text-sm ${act.typeColor}`}>
                         <div className="w-full h-full flex items-center justify-center min-h-[40px]">{act.type}</div>
                       </td>
 

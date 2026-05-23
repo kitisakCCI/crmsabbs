@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { initialProjectGroups } from './projectsData';
 
 export default function ClientProjectsPage() {
-  const [groups, setGroups] = useState(initialProjectGroups);
+  const [groups] = useState(initialProjectGroups);
 
   return (
     <div className="w-full min-h-screen bg-white text-slate-800 font-sans p-6 selection:bg-indigo-100 flex flex-col overflow-hidden">

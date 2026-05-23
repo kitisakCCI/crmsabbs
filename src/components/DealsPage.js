@@ -3,7 +3,7 @@ import { initialDealGroups } from './dealsData';
 import DealDetailPage from './DealDetailPage';
 
 export default function DealsPage() {
-  const [groups, setGroups] = useState(initialDealGroups);
+  const [groups] = useState(initialDealGroups);
   const [showDealDetails, setShowDealDetails] = useState(false);
 
   const handleOpenDealDetails = () => {

@@ -104,7 +104,7 @@ export default function Login({ onLoginSuccess }) {
               <input type="checkbox" className="w-4 h-4 text-blue-500 rounded focus:ring-2 focus:ring-blue-500" />
               <span className="ml-2 text-sm text-gray-600">Remember me</span>
             </label>
-            <a href="#" className="text-sm text-blue-500 hover:text-blue-700 transition">
+            <a href="#forgot-password" className="text-sm text-blue-500 hover:text-blue-700 transition">
               Forgot password?
             </a>
           </div>
@@ -130,7 +130,7 @@ export default function Login({ onLoginSuccess }) {
         <div className="mt-6 text-center">
           <p className="text-gray-600 text-sm">
             Don't have an account?{' '}
-            <a href="#" className="text-blue-500 hover:text-blue-700 font-medium transition">
+            <a href="#sign-up" className="text-blue-500 hover:text-blue-700 font-medium transition">
               Sign up
             </a>
           </p>

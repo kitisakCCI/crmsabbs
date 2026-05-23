@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { initialLeadGroups } from './leadsData';
 
 export default function LeadsPage() {
-  const [groups, setGroups] = useState(initialLeadGroups);
+  const [groups] = useState(initialLeadGroups);
 
   return (
     <div className="w-full min-h-screen bg-white text-slate-800 font-sans p-6 selection:bg-sky-100 flex flex-col overflow-hidden">

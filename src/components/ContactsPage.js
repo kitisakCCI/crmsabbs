@@ -3,7 +3,7 @@ import { initialGroups } from './contactsData'; // ดึงข้อมูล�
 import CreateContactForm from './CreateContactForm';
 
 export default function ContactsPage() {
-  const [groups, setGroups] = useState(initialGroups);
+  const [groups] = useState(initialGroups);
   const [isCreating, setIsCreating] = useState(false);
 
   const handleSaveNewContact = (newContactData) => {
