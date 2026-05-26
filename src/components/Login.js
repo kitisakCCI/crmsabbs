@@ -45,8 +45,8 @@ export default function Login({ onLoginSuccess }) {
         <div className="text-center mb-8">
           <img
             src="/crm_sabb.png"
-            alt="CRM NextGen"
-            className="mx-auto mb-4 h-24 w-auto"
+            alt="CRM SABB Logo"
+            className="mx-auto mb-4 h-36 w-auto"
           />
           <h1 className="text-3xl font-bold text-gray-800">Welcome Back</h1>
           <p className="text-gray-600 mt-2">Sign in to your account</p>

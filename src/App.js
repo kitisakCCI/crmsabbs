@@ -16,9 +16,9 @@ import Login from './components/Login';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [selectedPage, setSelectedPage] = useState('home');
+  const [selectedPage, setSelectedPage] = useState('sales-dashboard');
   const [user] = useState({
-    fullName: 'Phanuwat M.',
+    fullName: 'CRM Admin',
     title: 'Admin Pro',
     role: 'admin',
   });
